@@ -1,0 +1,74 @@
+{
+  "name": "@empellio/business-hours",
+  "version": "0.1.0",
+  "description": "A lightweight and accurate TypeScript library for handling business opening hours. Supports multiple daily time slots, holidays, exceptions, overnight openings, and timezone-aware calculations.",
+  "author": "Empellio OSS",
+  "license": "MIT",
+  "homepage": "https://github.com/empellio/business-hours#readme",
+  "bugs": {
+    "url": "https://github.com/empellio/business-hours/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/empellio/business-hours.git"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "dev": "vitest",
+    "prepare": "tsup"
+  },
+  "keywords": [
+    "business-hours",
+    "opening-hours",
+    "timezone",
+    "luxon",
+    "scheduling",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.14.12",
+    "@types/luxon": "^3.3.7",
+    "eslint": "^9.7.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "luxon": "^3.5.0"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "dts": true,
+    "sourcemap": true,
+    "clean": true,
+    "treeshake": true,
+    "minify": false,
+    "target": "es2020"
+  }
+}
+
